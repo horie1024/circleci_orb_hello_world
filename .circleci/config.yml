@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-    horie: horie1024/hello-world@0.0.1
+    horie: horie1024/hello-world@0.0.2
 
 jobs:
   build:
