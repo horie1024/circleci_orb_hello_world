@@ -1,17 +1,21 @@
 version: 2.1
 
 orbs:
-    horie: horie1024/hello-world@0.0.2
+    horie: horie1024/hello-world@0.0.10
 
 jobs:
   build:
+    environment:
+      DEPLOY_GATE_TOKEN: xxx-xxx-xxx
+      DEPLOY_GATE_USER: hogefuga
     docker:
       - image: circleci/ruby:2.5.1-node-browsers
     steps:
-      - horie/hello:
-          your_name: Ryosuke
-
-
+      - horie/distribute:
+          token: DEPLOY_GATE_TOKEN
+          user_name: DEPLOY_GATE_USER
+          apk_path: sample.apk
+          message: sample
 
 # workflows:
 #     "Hello Workflow":
