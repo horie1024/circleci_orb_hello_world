@@ -1,11 +1,19 @@
 version: 2.1
 
 orbs:
-    hello: circleci/hello-build@0.0.5
-    horie: horie1024/hello-world@dev:first
+    horie: horie1024/hello-world@0.0.1
 
-workflows:
-    "Hello Workflow":
-        jobs:
-          - horie/hello-world:
-              your_name: Ryosuke
+jobs:
+  build:
+    docker:
+      - image: circleci/ruby:2.5.1-node-browsers
+    steps:
+      - horie/hello:
+          your_name: Ryosuke
+
+
+
+# workflows:
+#     "Hello Workflow":
+#         jobs:
+#           - horie/hello
